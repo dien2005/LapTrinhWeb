@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Form nhập tên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: white;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 320px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #444;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        input[type="text"]:focus {
+            border-color: #4f46e5;
+            outline: none;
+            box-shadow: 0 0 6px rgba(79,70,229,0.4);
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background: #4f46e5;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        input[type="submit"]:hover {
+            background: #3730a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Nhập thông tin</h2>
+        <form action="hello" method="POST">
+            <label for="ten">Tên:</label>
+            <input type="text" id="ten" name="ten" placeholder="Nhập tên của bạn" />
+
+            <label for="holot">Họ lót:</label>
+            <input type="text" id="holot" name="holot" placeholder="Nhập họ lót của bạn" />
+
+            <input type="submit" value="Gửi thông tin" />
+        </form>
+    </div>
+</body>
+</html>
