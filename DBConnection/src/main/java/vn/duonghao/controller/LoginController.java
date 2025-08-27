@@ -18,7 +18,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet(urlPatterns = "/login")
+@WebServlet(urlPatterns = "/views/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	 public static final String SESSION_USERNAME = "username";
@@ -93,3 +93,4 @@ public class LoginController extends HttpServlet {
 		response.addCookie(cookie);
 	}
 }
+
