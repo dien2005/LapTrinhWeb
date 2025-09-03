@@ -21,8 +21,8 @@ import java.io.IOException;
 @WebServlet(urlPatterns = "/views/login")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	 public static final String SESSION_USERNAME = "username";
-	 public static final String COOKIE_REMEMBER = "username";
+	public static final String SESSION_USERNAME = "username";
+	public static final String COOKIE_REMEMBER = "username";
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -71,6 +71,9 @@ public class LoginController extends HttpServlet {
 		}
 		UserService service = new UserServiceImpl();
 		UserModel user = service.login(username, password);
+		System.out.println("Username: " + username);
+		System.out.println("Password: " + password);
+		System.out.println("User login result: " + user);
 		if (user != null) {
 			HttpSession session = request.getSession(true);
 			session.setAttribute("account", user);
@@ -85,12 +88,9 @@ public class LoginController extends HttpServlet {
 		}
 	}
 
-	
-
 	private void saveRemeberMe(HttpServletResponse response, String username) {
 		Cookie cookie = new Cookie(COOKIE_REMEMBER, username);
 		cookie.setMaxAge(30 * 60);
 		response.addCookie(cookie);
 	}
 }
-
